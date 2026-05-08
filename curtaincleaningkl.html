@@ -1196,6 +1196,222 @@
       transition-duration: 0.01ms !important;
     }
   }
+
+  /* ===== MOBILE DEEP FIXES ===== */
+
+  /* Fix iOS Safari 100vh bug — use dvh */
+  #hero { min-height: 100dvh; }
+
+  /* Safe area insets for iPhone notch / Dynamic Island */
+  #mobile-sticky {
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+
+  @media (max-width: 768px) {
+    /* Reduce section padding on mobile */
+    .section { padding: 56px 20px; }
+    #stats { padding: 32px 20px; }
+    #reviews-strip { padding: 32px 20px; }
+    #cta-banner { padding: 56px 20px; }
+    footer { padding: 48px 20px 28px; }
+
+    /* Tighter hero on mobile */
+    .hero-inner { padding: 72px 20px 36px; }
+    .hero-h1 { font-size: clamp(1.85rem, 8vw, 2.4rem); margin-bottom: 14px; }
+    .hero-sub { font-size: 0.95rem; margin-bottom: 22px; }
+    .trust-pills { gap: 6px; margin-bottom: 24px; }
+    .trust-pill { font-size: 0.75rem; padding: 5px 10px; }
+
+    /* Fix topbar to show single line cleanly */
+    #topbar { font-size: 0.75rem; padding: 7px 12px; }
+
+    /* Nav safe area */
+    nav { padding: 0 max(20px, env(safe-area-inset-left)); }
+
+    /* Make floating WA button account for sticky bar + safe area */
+    #wa-float {
+      bottom: calc(76px + env(safe-area-inset-bottom));
+      right: max(16px, env(safe-area-inset-right));
+      width: 50px; height: 50px;
+    }
+
+    /* Comparison table — stack as cards on mobile */
+    .compare-table thead { display: none; }
+    .compare-table, .compare-table tbody, .compare-table tr, .compare-table td {
+      display: block;
+      width: 100%;
+    }
+    .compare-table tbody tr {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 12px;
+      padding: 14px 16px;
+      background: var(--surface);
+    }
+    .compare-table tbody td {
+      padding: 6px 0;
+      font-size: 0.84rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      border: none;
+    }
+    .compare-table tbody td:first-child {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 700;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4px;
+    }
+    .compare-table tbody td::before {
+      content: attr(data-label);
+      font-size: 0.7rem;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      min-width: 55px;
+      flex-shrink: 0;
+    }
+
+    /* Pricing table — stack as cards */
+    .price-table thead { display: none; }
+    .price-table, .price-table tbody, .price-table tr, .price-table td {
+      display: block;
+      width: 100%;
+    }
+    .price-table tbody tr {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      padding: 14px 16px;
+      background: var(--surface);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .price-table tbody td {
+      padding: 0;
+      border: none;
+      font-size: 0.88rem;
+    }
+    .price-table tbody td:first-child {
+      flex: 1 1 100%;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .price-table tbody td:nth-child(2) { flex-shrink: 0; }
+    .price-table tbody td:nth-child(3) { flex-shrink: 0; }
+
+    /* Services grid — full card width on mobile for better readability */
+    .service-card { padding: 22px 18px; }
+    .service-name { font-size: 0.95rem; }
+    .service-desc { font-size: 0.84rem; }
+
+    /* Stats */
+    .stat-num { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+    .stat-label { font-size: 0.75rem; }
+
+    /* Steps */
+    .step { padding: 0 8px; }
+    .step-num { width: 48px; height: 48px; font-size: 1rem; }
+
+    /* FAQ touch target improvement */
+    .faq-q { padding: 16px 16px; font-size: 0.9rem; min-height: 52px; }
+    .faq-a { padding: 0 16px; }
+    .faq-item.open .faq-a { padding: 0 16px 16px; }
+
+    /* CTA buttons full width on small screens */
+    .cta-btns { flex-direction: column; align-items: stretch; padding: 0 8px; }
+    .cta-btns .btn-primary, .cta-btns .btn-white-ghost {
+      text-align: center;
+      justify-content: center;
+      width: 100%;
+      padding: 16px 24px;
+      font-size: 1rem;
+    }
+
+    /* Footer simplification */
+    .footer-bottom { flex-direction: column; text-align: center; gap: 6px; }
+    .footer-top { gap: 28px; }
+    .footer-contact-item { font-size: 0.84rem; }
+
+    /* Section headings tighter */
+    .section-h2 { font-size: clamp(1.6rem, 6.5vw, 2rem); margin-bottom: 32px; }
+    .section-label { margin-bottom: 8px; }
+
+    /* Area pills — slightly larger touch area */
+    .area-pill { padding: 9px 14px; font-size: 0.82rem; }
+
+    /* Review strip */
+    .strip-rating { font-size: 1.2rem; }
+    .review-rotator { min-height: 80px; }
+    .review-quote { font-size: 0.9rem; }
+
+    /* Testimonials */
+    .testi-card { padding: 22px 18px; }
+    .testi-text { font-size: 0.86rem; }
+
+    /* Callout box */
+    .callout-box { font-size: 0.86rem; padding: 14px 16px; }
+
+    /* Hero note */
+    .hero-note { font-size: 0.76rem; }
+
+    /* Scroll reveal — reduce movement on mobile for smoother feel */
+    .reveal { transform: translateY(16px); }
+  }
+
+  @media (max-width: 480px) {
+    /* Even tighter for very small phones */
+    .section { padding: 44px 16px; }
+    .hero-inner { padding: 64px 16px 28px; }
+    #stats { padding: 28px 16px; }
+    #cta-banner { padding: 44px 16px; }
+    footer { padding: 40px 16px 24px; }
+
+    /* Nav logo smaller */
+    .nav-logo { font-size: 0.9rem; }
+    .nav-logo .since-badge { font-size: 0.58rem; }
+
+    /* Hero full-bleed image */
+    .hero-img { height: 240px; border-radius: 14px; }
+    .hero-img-wrap { border-radius: 14px; }
+
+    /* Steps single column comfortable */
+    .step-num { width: 44px; height: 44px; font-size: 0.9rem; margin-bottom: 14px; }
+    .step-title { font-size: 0.95rem; }
+    .step-desc { font-size: 0.82rem; }
+
+    /* Pricing / compare override — keep compact */
+    .price-table tbody tr { padding: 12px 14px; }
+    .price-amount { font-size: 0.95rem; }
+
+    /* Trust pills wrap cleanly */
+    .trust-pill { font-size: 0.72rem; padding: 5px 9px; }
+
+    /* Mobile sticky larger touch area */
+    #mobile-sticky a { padding: 13px 12px; font-size: 0.88rem; min-height: 48px; }
+
+    /* Section label */
+    .section-label { font-size: 0.7rem; }
+
+    /* Stats 2-col compact */
+    .stats-inner { gap: 16px; }
+    .stat-item { padding: 8px; }
+
+    /* Topbar — single message, no overflow */
+    #topbar { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  }
 </style>
 </head>
 <body>
@@ -1409,33 +1625,33 @@
         <tbody>
           <tr>
             <td>Curtain Removal &amp; Installation</td>
-            <td><span class="check-yes">✓ 100% FREE</span></td>
-            <td><span class="check-no">✗ RM10/kg charged</span></td>
+            <td data-label="Us"><span class="check-yes">✓ 100% FREE</span></td>
+            <td data-label="Others"><span class="check-no">✗ RM10/kg charged</span></td>
           </tr>
           <tr>
             <td>Free Pickup &amp; Delivery</td>
-            <td><span class="check-yes">✓ Always Free</span></td>
-            <td>✓ Some offer</td>
+            <td data-label="Us"><span class="check-yes">✓ Always Free</span></td>
+            <td data-label="Others">✓ Some offer</td>
           </tr>
           <tr>
             <td>Same-Day Service</td>
-            <td><span class="check-yes">✓ Available</span></td>
-            <td><span class="check-no">✗ Not offered</span></td>
+            <td data-label="Us"><span class="check-yes">✓ Available</span></td>
+            <td data-label="Others"><span class="check-no">✗ Not offered</span></td>
           </tr>
           <tr>
             <td>Service Coverage</td>
-            <td><span class="check-yes">✓ 30+ Areas KL &amp; Selangor</span></td>
-            <td><span class="check-no">✗ Single location</span></td>
+            <td data-label="Us"><span class="check-yes">✓ 30+ Areas KL &amp; Selangor</span></td>
+            <td data-label="Others"><span class="check-no">✗ Single location</span></td>
           </tr>
           <tr>
             <td>Years Experience</td>
-            <td><span class="check-yes">✓ 45+ Years (Since 1979)</span></td>
-            <td><span class="check-no">✗ New business</span></td>
+            <td data-label="Us"><span class="check-yes">✓ 45+ Years (Since 1979)</span></td>
+            <td data-label="Others"><span class="check-no">✗ New business</span></td>
           </tr>
           <tr>
             <td>Real Google Reviews</td>
-            <td><span class="check-yes">✓ Verified reviews</span></td>
-            <td><span class="check-no">✗ Fake testimonials</span></td>
+            <td data-label="Us"><span class="check-yes">✓ Verified reviews</span></td>
+            <td data-label="Others"><span class="check-no">✗ Fake testimonials</span></td>
           </tr>
         </tbody>
       </table>
