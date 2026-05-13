@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Curtain Cleaning KL | Kedai Dobi Sharwin</title>
+<meta name="description" content="Contact Kedai Dobi Sharwin for curtain cleaning in KL. WhatsApp, call or visit us at Segambut. Free pickup & delivery available.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2300A896'/><text x='16' y='22' font-family='Arial,sans-serif' font-size='11' font-weight='bold' fill='white' text-anchor='middle'>CC</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #00a896;
+    --teal-dark: #007d6f;
+    --gold: #d4920a;
+    --ink: #0f1923;
+    --ink2: #243142;
+    --muted: #6b7a8d;
+    --bg: #f5f8fa;
+    --surface: #ffffff;
+    --surface2: #eef2f7;
+    --border: rgba(0,0,0,0.07);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+  }
+  .nav-logo {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--ink);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .logo-badge {
+    background: var(--teal);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--ink); background: rgba(0,168,150,0.06); }
+  .nav-links a.active { color: var(--teal); }
+  .nav-cta {
+    background: var(--teal);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 10px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,168,150,0.3); }
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* TOPBAR */
+  #topbar {
+    background: var(--teal-dark);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 8px 16px;
+    letter-spacing: 0.01em;
+  }
+
+  /* HERO */
+  .contact-hero {
+    background: linear-gradient(135deg, var(--ink) 0%, #1a2a3a 100%);
+    padding: 80px 5% 60px;
+    text-align: center;
+    color: #fff;
+  }
+  .contact-hero .label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 16px;
+  }
+  .contact-hero h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .contact-hero p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* MAIN */
+  .contact-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 5%;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px;
+  }
+  .contact-card h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .contact-item:last-child { margin-bottom: 0; }
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(0,168,150,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--teal);
+  }
+  .contact-icon svg { width: 20px; height: 20px; }
+  .contact-detail .label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .contact-detail a {
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  .contact-detail a:hover { text-decoration: underline; }
+  .contact-detail span {
+    color: var(--ink2);
+    font-size: 15px;
+    display: block;
+  }
+  .contact-detail .sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* BUTTONS */
+  .wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .wa-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
+  .email-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--teal);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .email-btn:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,168,150,0.3); }
+  .waze-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #33CCFF;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .waze-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(51,204,255,0.4); }
+
+  /* MAP */
+  .map-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .map-card-header {
+    padding: 24px 28px 16px;
+  }
+  .map-card-header h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .map-card-header p {
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .map-card iframe {
+    width: 100%;
+    height: 380px;
+    border: none;
+    display: block;
+  }
+
+  /* HOURS */
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .hours-row:last-child { border-bottom: none; }
+  .hours-row .day { color: var(--ink2); font-weight: 500; }
+  .hours-row .time { color: var(--teal); font-weight: 600; }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 28px 5%;
+    font-size: 13px;
+  }
+  footer a { color: var(--teal); text-decoration: none; }
+
+  /* MOBILE BAR */
+  .mobile-bar {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: var(--ink);
+    padding: 10px 16px;
+    gap: 10px;
+  }
+  .mobile-bar a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px;
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .mobile-bar .mb-wa { background: #25D366; }
+  .mobile-bar .mb-call { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 68px; left: 0; right: 0;
+      background: #fff;
+      padding: 16px 5% 20px;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      z-index: 999;
+      list-style: none;
+      gap: 0;
+    }
+    nav.menu-open .nav-links { display: flex; }
+    .nav-links li { width: 100%; }
+    .nav-links a { display: block; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 15px; }
+    .nav-links li:last-child a { border-bottom: none; }
+    .nav-hamburger { display: flex; }
+    .nav-cta .nav-cta-text { display: none; }
+    .nav-cta { padding: 10px 14px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-hero { padding: 60px 5% 40px; }
+    .mobile-bar { display: flex; }
+    body { padding-bottom: 70px; }
+  }
+  @media (max-width: 600px) {
+    .contact-card { padding: 24px 20px; }
+    .wa-btn, .email-btn, .waze-btn { width: 100%; justify-content: center; }
+    .nav-cta { display: none; }
+  }
+
+  /* FLOATING WA */
+  .wa-float {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    width: 56px; height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    z-index: 999;
+    transition: transform 0.2s;
+  }
+  .wa-float:hover { transform: scale(1.1); }
+  @media (max-width: 768px) { .wa-float { display: none; } }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div id="topbar">FREE Removal &amp; Reinstallation &nbsp;·&nbsp; Free Pickup &amp; Delivery &nbsp;·&nbsp; Mon–Sun 8am–9pm</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="curtaincleaningkl.html" class="nav-logo" aria-label="Curtain Cleaning KL Home">
+    CURTAIN CLEANING KL
+    <span class="logo-badge">Since 1979</span>
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="curtaincleaningkl.html#what-we-clean">Services</a></li>
+    <li><a href="curtaincleaningkl.html#pricing">Pricing</a></li>
+    <li><a href="curtaincleaningkl.html#areas">Areas</a></li>
+    <li><a href="curtaincleaningkl.html#testimonials">Reviews</a></li>
+    <li><a href="contact.html" class="active">Contact Us</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="https://wa.me/601116456310?text=Hi%2C%20I%27m%20interested%20in%20curtain%20cleaning%20service" target="_blank" rel="noopener" class="nav-cta">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.212l-.304-.182-2.868.852.852-2.868-.182-.304A8 8 0 1112 20z"/></svg>
+      <span class="nav-cta-text">WhatsApp Us</span>
+    </a>
+  </div>
+</nav>
+<script>
+  var navbar = document.getElementById('navbar');
+  var hamburger = document.getElementById('hamburger');
+  hamburger.addEventListener('click', function() {
+    var open = navbar.classList.toggle('menu-open');
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      navbar.classList.remove('menu-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+<!-- HERO -->
+<div class="contact-hero">
+  <div class="label">Get In Touch</div>
+  <h1>Contact Us</h1>
+  <p>We're just a WhatsApp away. Reach out for free quotes, pickups, or any curtain cleaning questions.</p>
+</div>
+
+<!-- MAIN -->
+<div class="contact-section">
+  <div class="contact-grid">
+
+    <!-- WhatsApp & Phone -->
+    <div class="contact-card">
+      <h2>WhatsApp &amp; Phone</h2>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.212l-.304-.182-2.868.852.852-2.868-.182-.304A8 8 0 1112 20z"/></svg>
+        </div>
+        <div class="contact-detail">
+          <div class="label">WhatsApp / Phone</div>
+          <a href="tel:+601116456310">011-1645 6310</a>
+          <div class="sub">Tap to call or WhatsApp</div>
+        </div>
+      </div>
+      <a href="https://wa.me/601116456310?text=Hi%2C%20I%27m%20interested%20in%20curtain%20cleaning%20service" class="wa-btn" rel="noopener" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.212l-.304-.182-2.868.852.852-2.868-.182-.304A8 8 0 1112 20z"/></svg>
+        Chat on WhatsApp
+      </a>
+
+      <div style="margin-top:36px">
+        <h2>Email Us</h2>
+        <div class="contact-item" style="margin-top:16px">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-detail">
+            <div class="label">Gmail</div>
+            <a href="mailto:kedaidobisharwin@gmail.com">kedaidobisharwin@gmail.com</a>
+            <div class="sub">We reply within 24 hours</div>
+          </div>
+        </div>
+        <a href="mailto:kedaidobisharwin@gmail.com" class="email-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Send an Email
+        </a>
+      </div>
+
+      <div style="margin-top:36px">
+        <h2>Opening Hours</h2>
+        <div style="margin-top:16px">
+          <div class="hours-row"><span class="day">Monday – Friday</span><span class="time">8am – 9pm</span></div>
+          <div class="hours-row"><span class="day">Saturday</span><span class="time">8am – 9pm</span></div>
+          <div class="hours-row"><span class="day">Sunday</span><span class="time">8am – 9pm</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Location -->
+    <div class="contact-card">
+      <h2>Our Location</h2>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="contact-detail">
+          <div class="label">Address</div>
+          <span>No 23, Pasar Malam Taman Kok Doh</span>
+          <span>Segambut, 51200 Kuala Lumpur</span>
+          <div class="sub">Free parking available</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+        <a href="https://www.google.com/maps?rlz=1C5CHFA_enMY1001MY1001&um=1&ie=UTF-8&fb=1&gl=my&sa=X&geocode=KYGb3_-3R8wxMREu1c3P5qAd&daddr=No+23,+pasar+malam+Taman+kok+doh,+Segambut,+51200+Kuala+Lumpur" class="email-btn" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Google Maps
+        </a>
+        <a href="https://waze.com/ul/hw2861mys3" class="waze-btn" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="26" rx="19" ry="17" fill="#33CCFF"/><ellipse cx="24" cy="26" rx="19" ry="17" fill="#00C8F0"/><path d="M24 9C13.5 9 5 16.8 5 26.3c0 5.5 2.7 10.4 6.9 13.6L11 44l4.5-2.2c2.6.9 5.4 1.5 8.5 1.5 10.5 0 19-7.8 19-17.3C43 16.8 34.5 9 24 9z" fill="#F5F5F5"/><circle cx="18" cy="27" r="2.5" fill="#333"/><circle cx="30" cy="27" r="2.5" fill="#333"/><path d="M19 33c1.3 1.5 3 2.5 5 2.5s3.7-1 5-2.5" stroke="#333" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="33" cy="16" r="4" fill="#FF4500"/><path d="M33 13v4M31 15h4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Waze
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MAP -->
+  <div class="map-card">
+    <div class="map-card-header">
+      <h2>Find Us Here</h2>
+      <p>No 23, Pasar Malam Taman Kok Doh, Segambut, 51200 Kuala Lumpur</p>
+    </div>
+    <iframe
+      src="https://maps.google.com/maps?q=No+23,+pasar+malam+Taman+kok+doh,+Segambut,+51200+Kuala+Lumpur&output=embed&z=17"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Kedai Dobi Sharwin location map">
+    </iframe>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>&copy; 2026 Kedai Dobi Sharwin. All rights reserved. &nbsp;|&nbsp; <a href="curtaincleaningkl.html">Back to Home</a> &nbsp;|&nbsp; <a href="https://kedaidobisharwin.com">Main Site</a></div>
+  <div style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap">
+    <a href="https://www.google.com/maps?rlz=1C5CHFA_enMY1001MY1001&um=1&ie=UTF-8&fb=1&gl=my&sa=X&geocode=KYGb3_-3R8wxMREu1c3P5qAd&daddr=No+23,+pasar+malam+Taman+kok+doh,+Segambut,+51200+Kuala+Lumpur" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:none;display:flex;align-items:center;gap:6px;font-size:13px">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Google Maps
+    </a>
+    <span style="opacity:0.3">|</span>
+    <a href="https://waze.com/ul/hw2861mys3" target="_blank" rel="noopener" style="color:#33CCFF;text-decoration:none;display:flex;align-items:center;gap:6px;font-size:13px">
+      <svg width="14" height="14" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="26" rx="19" ry="17" fill="#33CCFF"/><path d="M24 9C13.5 9 5 16.8 5 26.3c0 5.5 2.7 10.4 6.9 13.6L11 44l4.5-2.2c2.6.9 5.4 1.5 8.5 1.5 10.5 0 19-7.8 19-17.3C43 16.8 34.5 9 24 9z" fill="#F5F5F5"/><circle cx="18" cy="27" r="2.5" fill="#333"/><circle cx="30" cy="27" r="2.5" fill="#333"/><path d="M19 33c1.3 1.5 3 2.5 5 2.5s3.7-1 5-2.5" stroke="#333" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      Waze
+    </a>
+  </div>
+</footer>
+
+<!-- MOBILE BAR -->
+<div class="mobile-bar">
+  <a href="https://wa.me/601116456310?text=Hi%2C%20I%27m%20interested%20in%20curtain%20cleaning%20service" class="mb-wa" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.212l-.304-.182-2.868.852.852-2.868-.182-.304A8 8 0 1112 20z"/></svg>
+    WhatsApp Us
+  </a>
+  <a href="tel:+601116456310" class="mb-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Call Now
+  </a>
+</div>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/601116456310?text=Hi%2C%20I%27m%20interested%20in%20curtain%20cleaning%20service" class="wa-float" title="WhatsApp Us" rel="noopener">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.212l-.304-.182-2.868.852.852-2.868-.182-.304A8 8 0 1112 20z"/></svg>
+</a>
+
+</body>
+</html>
