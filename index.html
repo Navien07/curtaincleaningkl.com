@@ -1,8 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5TQXBVPM');</script>
+<!-- End Google Tag Manager -->
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18193247669"></script>
+<script>
+/* GTM click event tracking — private, not visible on page */
+window.dataLayer = window.dataLayer || [];
+(function() {
+  document.addEventListener('click', function(e) {
+    var el = e.target.closest('a');
+    if (!el) return;
+    var href = el.getAttribute('href') || '';
+    var text = (el.textContent || '').trim().slice(0, 60);
+    var loc  = window.location.pathname;
+    if (href.indexOf('wa.me') !== -1) {
+      dataLayer.push({event: 'whatsapp_click', button_text: text, page: loc});
+    } else if (href.indexOf('tel:') === 0) {
+      dataLayer.push({event: 'phone_click', page: loc});
+    } else if (href.indexOf('mailto:') === 0) {
+      dataLayer.push({event: 'email_click', page: loc});
+    } else if (href === '#contact-us' || href.indexOf('/contact') !== -1 || text.toLowerCase().indexOf('contact us') !== -1) {
+      dataLayer.push({event: 'contact_us_click', page: loc});
+    }
+  });
+})();
+</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -1453,6 +1478,9 @@
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5TQXBVPM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- PROGRESS BAR -->
 <div id="progress-bar" role="progressbar" aria-label="Page scroll progress"></div>
