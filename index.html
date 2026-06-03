@@ -19,8 +19,8 @@ window.dataLayer = window.dataLayer || [];
     if (href.indexOf('wa.me') !== -1) {
       dataLayer.push({event: 'whatsapp_click', button_text: text, page: loc});
       // send to manual counter
-      var COUNTER_URL = 'YOUR_APPS_SCRIPT_URL';
-      if (COUNTER_URL !== 'YOUR_APPS_SCRIPT_URL') {
+      var COUNTER_URL = 'https://script.google.com/macros/s/AKfycbxbFo9Av1i9tRwWnoQ81nB9BbzbQjqG-mXI4jwOpbJ_5xm5F67-U0_2ofOQ1vw492XA/exec';
+      if (COUNTER_URL !== 'https://script.google.com/macros/s/AKfycbxbFo9Av1i9tRwWnoQ81nB9BbzbQjqG-mXI4jwOpbJ_5xm5F67-U0_2ofOQ1vw492XA/exec') {
         var _site = window.location.hostname.replace('www.','').replace('.com','').replace('.vercel.app','');
         var _body = JSON.stringify({site: _site, event: 'whatsapp_click', page: window.location.pathname});
         navigator.sendBeacon ? navigator.sendBeacon(COUNTER_URL, _body)
@@ -29,8 +29,8 @@ window.dataLayer = window.dataLayer || [];
     } else if (href.indexOf('tel:') === 0) {
       dataLayer.push({event: 'phone_click', page: loc});
       // send to manual counter
-      var COUNTER_URL = 'YOUR_APPS_SCRIPT_URL';
-      if (COUNTER_URL !== 'YOUR_APPS_SCRIPT_URL') {
+      var COUNTER_URL = 'https://script.google.com/macros/s/AKfycbxbFo9Av1i9tRwWnoQ81nB9BbzbQjqG-mXI4jwOpbJ_5xm5F67-U0_2ofOQ1vw492XA/exec';
+      if (COUNTER_URL !== 'https://script.google.com/macros/s/AKfycbxbFo9Av1i9tRwWnoQ81nB9BbzbQjqG-mXI4jwOpbJ_5xm5F67-U0_2ofOQ1vw492XA/exec') {
         var _site = window.location.hostname.replace('www.','').replace('.com','').replace('.vercel.app','');
         var _body = JSON.stringify({site: _site, event: 'phone_click', page: window.location.pathname});
         navigator.sendBeacon ? navigator.sendBeacon(COUNTER_URL, _body)
@@ -39,8 +39,8 @@ window.dataLayer = window.dataLayer || [];
     } else if (href.indexOf('mailto:') === 0) {
       dataLayer.push({event: 'email_click', page: loc});
       // send to manual counter
-      var COUNTER_URL = 'YOUR_APPS_SCRIPT_URL';
-      if (COUNTER_URL !== 'YOUR_APPS_SCRIPT_URL') {
+      var COUNTER_URL = 'https://script.google.com/macros/s/AKfycbxbFo9Av1i9tRwWnoQ81nB9BbzbQjqG-mXI4jwOpbJ_5xm5F67-U0_2ofOQ1vw492XA/exec';
+      if (COUNTER_URL !== 'https://script.google.com/macros/s/AKfycbxbFo9Av1i9tRwWnoQ81nB9BbzbQjqG-mXI4jwOpbJ_5xm5F67-U0_2ofOQ1vw492XA/exec') {
         var _site = window.location.hostname.replace('www.','').replace('.com','').replace('.vercel.app','');
         var _body = JSON.stringify({site: _site, event: 'email_click', page: window.location.pathname});
         navigator.sendBeacon ? navigator.sendBeacon(COUNTER_URL, _body)
@@ -49,8 +49,8 @@ window.dataLayer = window.dataLayer || [];
     } else if (href === '#contact-us' || href.indexOf('/contact') !== -1 || text.toLowerCase().indexOf('contact us') !== -1) {
       dataLayer.push({event: 'contact_us_click', page: loc});
       // send to manual counter
-      var COUNTER_URL = 'YOUR_APPS_SCRIPT_URL';
-      if (COUNTER_URL !== 'YOUR_APPS_SCRIPT_URL') {
+      var COUNTER_URL = 'https://script.google.com/macros/s/AKfycbxbFo9Av1i9tRwWnoQ81nB9BbzbQjqG-mXI4jwOpbJ_5xm5F67-U0_2ofOQ1vw492XA/exec';
+      if (COUNTER_URL !== 'https://script.google.com/macros/s/AKfycbxbFo9Av1i9tRwWnoQ81nB9BbzbQjqG-mXI4jwOpbJ_5xm5F67-U0_2ofOQ1vw492XA/exec') {
         var _site = window.location.hostname.replace('www.','').replace('.com','').replace('.vercel.app','');
         var _body = JSON.stringify({site: _site, event: 'contact_us_click', page: window.location.pathname});
         navigator.sendBeacon ? navigator.sendBeacon(COUNTER_URL, _body)
