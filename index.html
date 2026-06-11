@@ -1507,6 +1507,29 @@ window.dataLayer = window.dataLayer || [];
     /* Topbar — single message, no overflow */
     #topbar { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   }
+  /* ── WhatsApp CTA buttons (WhatsApp green, same pill shape as btn-primary) ── */
+  .btn-wa {
+    background: #25D366;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+  }
+  .btn-wa:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,0.45); }
+  .hero-wa-block { margin-bottom: 18px; }
+  .wa-cta-strip { background: rgba(0,168,150,0.05); text-align: center; padding: 28px 16px; border-top: 1px solid rgba(0,168,150,0.1); border-bottom: 1px solid rgba(0,168,150,0.1); }
+  @media (max-width: 600px) {
+    .hero-wa-block .btn-wa, .wa-cta-strip .btn-wa { width: 100%; justify-content: center; }
+  }
 </style>
 </head>
 <body>
@@ -1578,6 +1601,12 @@ window.dataLayer = window.dataLayer || [];
         <span class="trust-pill teal">⚡ Same-Day Available</span>
         <span class="trust-pill">🏆 45 Years Heritage</span>
         <span class="trust-pill">📍 30+ Areas</span>
+      </div>
+      <div class="hero-wa-block">
+        <a href="https://wa.me/601116456310?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20curtain%20cleaning" target="_blank" rel="noopener" class="btn-wa">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+          Get a Curtain Cleaning Quote
+        </a>
       </div>
       <div class="hero-ctas">
         <a href="https://wa.me/601116456310?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20curtain%20cleaning" target="_blank" rel="noopener" class="btn-primary">💬 WhatsApp for a Quote</a>
@@ -1811,6 +1840,13 @@ window.dataLayer = window.dataLayer || [];
     </div>
   </div>
 </section>
+<!-- WhatsApp CTA — after pricing (decision moment) -->
+<div class="wa-cta-strip">
+  <a href="https://wa.me/601116456310?text=Hi%2C%20I%27d%20like%20an%20exact%20quote%20for%20curtain%20cleaning" target="_blank" rel="noopener" class="btn-wa">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+    Get a Curtain Cleaning Quote
+  </a>
+</div>
 
 <!-- SERVICE AREAS -->
 <section id="areas" class="section" aria-labelledby="areas-title">
@@ -2075,7 +2111,7 @@ window.dataLayer = window.dataLayer || [];
           <div>
             <p style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Address</p>
             <p style="font-size:0.95rem;color:var(--ink);font-weight:500;line-height:1.5;">No 23, Pasar Malam Taman Kok Doh,<br>Segambut, 51200 Kuala Lumpur</p>
-            <p style="font-size:0.8rem;color:var(--muted);margin-top:4px;">Free parking available</p>
+            <p style="font-size:0.8rem;color:var(--muted);margin-top:4px;">Parking available</p>
           </div>
         </div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;">
