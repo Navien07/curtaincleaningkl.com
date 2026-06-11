@@ -2187,6 +2187,10 @@ function sendContactWA() {
   if (service) text += '\nService: ' + service;
   if (area) text += '\nArea: ' + area;
   if (message) text += '\nMessage: ' + message;
+  dataLayer.push({event: 'whatsapp_click', button_text: 'Contact Form', page: window.location.pathname});
+  var _site = window.location.hostname.replace('www.','').replace('.com','').replace('.vercel.app','');
+  var _body = JSON.stringify({site: _site, event: 'whatsapp_click', page: window.location.pathname});
+  navigator.sendBeacon ? navigator.sendBeacon('https://script.google.com/macros/s/AKfycbxbFo9Av1i9tRwWnoQ81nB9BbzbQjqG-mXI4jwOpbJ_5xm5F67-U0_2ofOQ1vw492XA/exec', _body) : fetch('https://script.google.com/macros/s/AKfycbxbFo9Av1i9tRwWnoQ81nB9BbzbQjqG-mXI4jwOpbJ_5xm5F67-U0_2ofOQ1vw492XA/exec', {method:'POST',mode:'no-cors',body:_body}).catch(function(){});
   window.open('https://wa.me/601116456310?text=' + encodeURIComponent(text), '_blank', 'noopener');
 }
 </script>
